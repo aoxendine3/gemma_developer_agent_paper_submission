@@ -1,0 +1,57 @@
+name: Sovereign CI & 14-Stage Gauntlet Verification
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    name: Build & Verification Gauntlet (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Install Rust Toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install numpy matplotlib pytest
+
+      - name: Build Native Rust FFI Crate
+        run: |
+          cargo build --release
+
+      - name: Execute Native Rust Tests
+        run: |
+          cargo test --verbose
+
+      - name: Run Poincaré Norm Mathematical Regression Suite
+        run: |
+          python3 tests/test_poincare_norm_regression.py
+
+      - name: Run Python FFI HexCell Lattice Verification
+        run: |
+          python3 hexcell/lattice.py
+
+      - name: Execute Master 14-Stage Sovereign Gauntlet Runner
+        run: |
+          python3 run_gauntlet_tests.py
+
+      - name: Verify Verification Receipt Artifact
+        run: |
+          test -f docs/GAUNTLET_RECEIPT.json
+          cat docs/GAUNTLET_RECEIPT.json

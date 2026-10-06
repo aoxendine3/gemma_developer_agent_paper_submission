@@ -44,3 +44,30 @@ pub fn mobius_addition(u: &[f64], v: &[f64], out: &mut [f64]) {
 
     poincare_projection(out);
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test_norm_bound_constant() {
+        assert_eq!(POINCARE_NORM_BOUND, 0.85);
+    }
+
+    #[test]
+    fn test_poincare_projection_gate() {
+        let mut v = vec![0.9, 0.9, 0.9];
+        poincare_projection(&mut v);
+        let n = norm(&v);
+        assert!((n - POINCARE_NORM_BOUND).abs() < 1e-6);
+    }
+
+    #[test]
+    fn test_mobius_addition_stability() {
+        let u = vec![0.5; 10];
+        let v = vec![0.5; 10];
+        let mut out = vec![0.0; 10];
+        mobius_addition(&u, &v, &mut out);
+        assert!(norm(&out) <= POINCARE_NORM_BOUND + 1e-6);
+    }
+}
