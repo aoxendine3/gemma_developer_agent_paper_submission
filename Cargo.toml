@@ -1,0 +1,12 @@
+[package]
+name = "context_bridge"
+version = "0.1.0"
+edition = "2021"
+description = "Rust FFI Bridge for Gemma 4 Swarm Architecture & HexCell Hyperbolic Memory Space"
+license = "Apache-2.0"
+
+[lib]
+name = "context_bridge"
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
