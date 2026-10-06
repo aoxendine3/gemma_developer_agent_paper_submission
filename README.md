@@ -21,6 +21,17 @@ This framework enables zero-copy state synchronization without traditional seria
 
 ---
 
+## Media & Visual Architecture Gallery
+
+### 1. HexCell Hyperbolic Memory Swarm Execution Pipeline
+![HexCell Architecture Diagram](docs/images/architecture_diagram.png)
+
+### 2. High-Velocity Scaling & Metric Distortion Benchmarks
+![Benchmark Comparison Plot](docs/images/benchmark_comparison.png)
+
+---
+
+
 ## Repository Structure
 
 ```
