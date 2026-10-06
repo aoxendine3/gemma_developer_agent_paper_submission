@@ -1,0 +1,13 @@
+name: GemmaHexCellDeveloperAgent
+description: "Zero-Copy 16k-Node HexCell Hyperbolic Memory Swarm Developer Agent for SWE-Bench Automated Patching"
+version: "1.0.0"
+model: "gemma-4-31b-it-qat-w4a16-ct"
+entrypoint: "adk_agent.py"
+skills:
+  - name: hexcell_memory_lattice
+    path: "hexcell/lattice.py"
+config:
+  timeout_hours: 12
+  context_dimensions: 18432
+  max_tokens: 8192
+  temperature: 0.1
