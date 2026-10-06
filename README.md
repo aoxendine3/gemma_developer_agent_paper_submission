@@ -4,7 +4,7 @@
 > **Submission Track**: Google - The Gemma 4 Developer Agent Paper Track  
 > **Repository Link**: [https://github.com/aoxendine3/gemma_developer_agent_paper_submission.git](https://github.com/aoxendine3/gemma_developer_agent_paper_submission.git)
 
-[![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen.svg)](https://github.com/aoxendine3/gemma_developer_agent_paper_submission)
+[![Build Status](https://github.com/aoxendine3/gemma_developer_agent_paper_submission/actions/workflows/ci.yml/badge.svg)](https://github.com/aoxendine3/gemma_developer_agent_paper_submission/actions/workflows/ci.yml)
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 [![Verification](https://img.shields.io/badge/Gauntlet-14_Gate_PASS-success.svg)](https://github.com/aoxendine3/gemma_developer_agent_paper_submission)
 [![Regression Suite](https://img.shields.io/badge/Math_Regression-3_Tests_PASS-brightgreen.svg)](tests/test_poincare_norm_regression.py)
