@@ -9,11 +9,15 @@
 [![Verification](https://img.shields.io/badge/Gauntlet-14_Gate_PASS-success.svg)](https://github.com/aoxendine3/gemma_developer_agent_paper_submission)
 [![Regression Suite](https://img.shields.io/badge/Math_Regression-3_Tests_PASS-brightgreen.svg)](tests/test_poincare_norm_regression.py)
 
+[![Watch Demo Video](https://img.youtube.com/vi/lOrY2ytYQs8/hqdefault.jpg)](https://youtu.be/lOrY2ytYQs8)
+
+*Demo video for the Gemma Developer Agent and HexCell swarm implementation.*
+
 ---
 
 # Abstract
 
-This project introduces **HexCell**, an 18,432-dimensional hyperbolic embedding memory lattice designed to eliminate serialization and state-sharing bottlenecks in multi-agent LLM systems. By leveraging a high-performance, low-latency Rust FFI bridge, HexCell enables real-time zero-copy state synchronization across distributed Gemma 4 agent swarms. All components have been systematically validated through the 14-stage Sovereign Gauntlet test suite and an automated mathematical regression engine.
+This project introduces **HexCell**, an 18,432-dimensional hyperbolic embedding memory lattice designed to eliminate serialization and state-sharing bottlenecks in multi-agent LLM systems. By leve[...]
 
 ---
 
@@ -21,12 +25,12 @@ This project introduces **HexCell**, an 18,432-dimensional hyperbolic embedding 
 
 ### 1. HexCell Memory Lattice
 
-* **Topology:** Operates in an 18,432-dimensional hyperbolic embedding space ($\mathbb{B}^{18432}$), preserving complex hierarchical and relational context between autonomous agents without flat Euclidean topic bleed.
-* **Zero-Copy Synchronization:** Bypasses traditional JSON/Protobuf serialization cycles, enabling direct memory-mapped access (`0x3000`) with lock-free atomic double-buffering (`std::sync::atomic`) for concurrent agent execution.
+* **Topology:** Operates in an 18,432-dimensional hyperbolic embedding space ($\mathbb{B}^{18432}$), preserving complex hierarchical and relational context between autonomous agents without flat E[...]
+* **Zero-Copy Synchronization:** Bypasses traditional JSON/Protobuf serialization cycles, enabling direct memory-mapped access (`0x3000`) with lock-free atomic double-buffering (`std::sync::atomic[...]
 
 ### 2. Rust FFI Bridge
 
-* **Native Interop:** Provides C-compatible dynamic interfaces (`libcontext_bridge.dylib`) between the high-level Python/TypeScript Gemma 4 agent orchestration layers and bare-metal native memory pools.
+* **Native Interop:** Provides C-compatible dynamic interfaces (`libcontext_bridge.dylib`) between the high-level Python/TypeScript Gemma 4 agent orchestration layers and bare-metal native memory [...]
 * **Concurrency & Safety:** Enforces strict memory safety guarantees and thread suspension mechanics during atomic dynamic memory remapping.
 
 ---
