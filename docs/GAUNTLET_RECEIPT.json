@@ -1,15 +1,15 @@
 {
-  "timestamp_utc": "2026-10-06T19:18:56Z",
+  "timestamp_utc": "2026-10-06T19:52:06Z",
   "target_model": "gemma-4-31b-it-qat-w4a16-ct",
   "total_stages": 14,
   "all_stages_passed": true,
-  "execution_time_seconds": 0.0474,
+  "execution_time_seconds": 0.0786,
   "stages": [
     {
       "stage": "01",
       "name": "Sub-Millisecond State Transition Benchmark",
       "status": "PASS",
-      "detail": "Empirically measured avg FFI sync latency: 0.000136 ms over 1000 calls (<0.300 ms SLO limit)"
+      "detail": "Empirically measured avg FFI sync latency: 0.000141 ms over 1000 calls (<0.300 ms SLO limit)"
     },
     {
       "stage": "02",
@@ -63,13 +63,13 @@
       "stage": "10",
       "name": "POSIX Shared Memory (0x3000) Lock-Free Double Buffering",
       "status": "PASS",
-      "detail": "Measured atomic double-buffer throughput: 7,320,466 ops/sec over 50000 iterations"
+      "detail": "Measured atomic double-buffer throughput: 6,643,231 ops/sec over 50000 iterations"
     },
     {
       "stage": "11",
       "name": "Zero-Copy State Sharing Memory Bandwidth",
       "status": "PASS",
-      "detail": "Synchronized 3.05 MB buffer at effective bandwidth 2,090,477.93 MB/s"
+      "detail": "Synchronized 3.05 MB buffer at effective bandwidth 2,360,683.43 MB/s"
     },
     {
       "stage": "12",

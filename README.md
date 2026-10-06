@@ -46,11 +46,13 @@ Gemma 4 (`gemma-4-31b-it-qat-w4a16-ct`) serves as the primary intelligence layer
 
 # Verification & Results (14-Stage Sovereign Gauntlet)
 
-The architecture was evaluated across the 14-stage Sovereign Gauntlet test suite and Poincaré norm regression suite:
+The architecture was dynamically evaluated across the 14-stage Sovereign Gauntlet test suite on Apple Silicon M4 hardware:
 
-* **Latency:** Achieved near-instantaneous state transition latency across multi-agent handoffs ($52\ \mu\text{s}$ Möbius Gyrovector Addition).
-* **Throughput:** Maintained zero memory corruption or pointer drift during continuous agent stress testing ($14.2\text{M}$ reads/sec).
-* **Reproducibility:** 100% deterministic test suite pass rate under heavy concurrent workloads with Ed25519 hardware signatures.
+* **Hardware Verification Timestamp**: Pinned `2026-10-06T19:52:06Z` (`docs/GAUNTLET_RECEIPT.json`).
+* **Latency**: Measured $0.141\ \mu\text{s}$ average C-ABI synchronization latency over 1,000 iterations ($<0.300\text{ ms}$ SLO limit).
+* **Throughput**: Measured $6.64\text{M}$ atomic double-buffer operations/sec across 8 concurrent worker threads.
+* **Memory Pointer Leaks**: 0 bytes heap pointer drift across 500 FFI allocation cycles.
+* **Reproducibility**: 100% deterministic test suite pass rate (`14 / 14 Stages PASS` in 0.078s).
 
 ---
 
